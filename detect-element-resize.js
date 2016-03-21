@@ -152,7 +152,9 @@ if (isBrowser) {
 				element.__resizeListeners__.splice(element.__resizeListeners__.indexOf(fn), 1);
 				if (!element.__resizeListeners__.length) {
 					element.removeEventListener('scroll', scrollListener);
-					element.__resizeTriggers__ = !element.removeChild(element.__resizeTriggers__);
+					if(element.__resizeTriggers__.length){
+						element.__resizeTriggers__ = !element.removeChild(element.__resizeTriggers__);
+					}
 				}
 			}
 		}
